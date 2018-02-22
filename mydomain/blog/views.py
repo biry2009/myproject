@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import Blog, Comment
+
+
 
 # Create your views here.
 
 
 def blogindex(request):
-    return HttpResponse("Hello, This is the blog index page")
+    blogs = Blog.objects.all()
+    return render(request, 'blogindex.html', {'blogs': blogs})

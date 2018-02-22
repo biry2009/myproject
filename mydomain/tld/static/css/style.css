@@ -6,6 +6,18 @@
     margin-top: 20px;
 }
 
+.post-meta {
+    background-color: #10ac84;
+    font-size: 16px;
+    color: #f7f7f7;
+}
+
+.post-meta li {
+    padding: 5px 10px;
+    display: inline-block;
+    font-style: italic;
+}
+
 
 .navbar {
 	position:relative;
