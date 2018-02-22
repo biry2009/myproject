@@ -13,12 +13,11 @@
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="row">
+                    {% load static %}
                     {% for reg in registrars %}
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        <div class="registrar-list" style="background-color:#02c54c;">
+                        <div class="registrar-list" style="background-color:{{reg.color}};">
                             <div class="reviews-image">
-                                {% load static %}
-                                {% url 'link' as base %}
                                 <a href="{% url 'review' reg.keyword %}">{% static 'imags/registrars/' as baseUrl %}<img
                                         src="{{ baseUrl }}{{reg.keyword}}_review.png"
                                         class="img-responsive" alt="{{reg.keyword}} review"/></a>
