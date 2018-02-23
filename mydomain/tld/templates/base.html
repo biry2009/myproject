@@ -52,6 +52,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'reviews' %}">Reviews</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
@@ -62,16 +63,8 @@
 
 <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-10 col-lg-offset-1">
-          {% block breadcrumb %}{% endblock %}
-      </div>
-    </div>
-</div>
-
-
-<div class="container-fluid">
-    <div class="row">
         <div class="col-lg-10 col-lg-offset-1">
+            {% block breadcrumb %}{% endblock %}
             {% block body %}{% endblock %}
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus enim eum exercitationem
                 inventore iste itaque laborum laudantium magni minima natus neque optio perspiciatis porro, ratione, rem

@@ -19,12 +19,14 @@ from django.contrib import admin
 from tld import views as tld_views
 
 urlpatterns = [
+    url(r'^summernote/', include('django_summernote.urls')),
     url(r'^tlds/(?P<name>\w+)/$', tld_views.domain, name="domain"),
     url(r'^$', tld_views.index, name="index"),
     url(r'^reviews/$', tld_views.reviews, name="reviews"),
     url(r'^review/(?P<name>\w+)$', tld_views.review, name="review"),
     url(r'^about/$', tld_views.about, name="about"),
     url(r'^contact/$', tld_views.contact, name="contact"),
-    url(r'^blog/', include('blog.urls')),
     url(r'^mylogin/', admin.site.urls),
+    url(r'^blog/$', tld_views.blogindex, name='blog'),
+    url(r'^blog/(?P<slug>[-\w]+)/$', tld_views.detail, name='detail'),
 ]

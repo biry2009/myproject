@@ -1,7 +1,8 @@
 # coding: utf-8
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Domain, Registrar, Cheapest, Price
+from .models import Blog, Comment
 
 
 from django.http import HttpResponse
@@ -30,10 +31,21 @@ def domain(request, name):
 
 #About Page
 def about(request):
-    return render(request, 'about.html')
+    title = 'About'
+    return render(request, 'about.html', {'title': title})
 
 #Contact Page
 def contact(request):
-    return render(request, 'contact.html')
+    title = 'Contact'
+    return render(request, 'contact.html', {'title': title})
+
+
+def blogindex(request):
+    blogs = Blog.objects.all()
+    return render(request, 'blogindex.html', {'blogs': blogs})
+
+def detail(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    return render(request, 'detail.html', {'blog': blog})
 
 
