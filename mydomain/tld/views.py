@@ -24,9 +24,23 @@ def review(request, name):
     else:
         return render(request, '404.html')
 
+def tlds(request):
+    domains = Domain.objects.all()
+
+    return render(request, 'tlds.html', {'domains': domains})
+
 
 def domain(request, name):
-    return render(request, 'tld_base.html')
+    domain_extension = Domain.objects.get(name=name)
+
+    if domain_extension:
+        prices = domain_extension.price_set.all()
+        content = {'domain': domain_extension, 'prices': prices, }
+
+        return render(request, 'tld_base.html', content)
+    else:
+        return render(request, '404.html')
+
 
 
 #About Page

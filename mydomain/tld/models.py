@@ -4,8 +4,7 @@ from django.db import models
 class Domain(models.Model):
 
     class Meta:
-        db_table = 'tld_domain'
-    updatetime = models.DateTimeField()
+        db_table = 'tlds_domain'
     name = models.CharField(max_length=20)
     description = models.TextField(blank=True)
     type = models.CharField(max_length=30)
@@ -15,7 +14,6 @@ class Domain(models.Model):
     popular = models.IntegerField(blank=True)
     restrictions = models.CharField(max_length=200, blank=True)
     sources = models.TextField(blank=True)
-
     def __str__(self):
         return self.name
 
@@ -23,7 +21,7 @@ class Domain(models.Model):
 class Registrar(models.Model):
 
     class Meta:
-        db_table = 'tld_registrar'
+        db_table = 'tlds_registrar'
     keyword = models.CharField(max_length=20)
     name = models.CharField(max_length=30)
     url = models.CharField(max_length=50)
@@ -34,22 +32,25 @@ class Registrar(models.Model):
     def __str__(self):
         return self.name
 
-
 class Price(models.Model):
 
     class Meta:
-        db_table = 'tld_price'
+        db_table = 'tlds_price'
+    name = models.ForeignKey(Domain)
+    registrar = models.ForeignKey(Registrar)
     register = models.FloatField(blank=True)
     renewal = models.FloatField(blank=True)
     transfer = models.FloatField(blank=True)
     whois = models.FloatField(blank=True)
 
 
+# Cheapest Price Table
 class Cheapest(models.Model):
 
     class Mete:
-        db_table = 'tld_cheapest'
+        db_table = 'tlds_cheapest'
     name = models.CharField(max_length=20)
+    updated = models.DateTimeField(blank=True)
     reg_registrar = models.CharField(max_length=30, blank=True)
     reg_price = models.FloatField(blank=True)
     renew_registrar = models.CharField(max_length=30, blank=True)

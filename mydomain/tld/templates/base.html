@@ -6,16 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 
     {% if title %}
-        <title>{{ title }} - DomainHut.com</title>
+        <title>{{ title }} - CheapTLDs.com</title>
     {% else %}
-        <title>The home page</title>
+        <title>The Cheapest Top Level Domains List | Cheap TLDs</title>
     {% endif %}
     <meta name="description" content="In this post, Perrin looks into the new webmasters trend of 2018: Using your visitor&#039;s computers to mine crypto currencies." />
     <link rel="shortcut icon" href="/favicon.ico">
 
     <link rel="canonical" href="https://backlinko.com/google-rankbrain-seo" />
-
-
 
     {% load staticfiles %}
 
@@ -34,31 +32,25 @@
 </head>
 <body>
 <nav class="navbar navbar-default">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            {% load staticfiles %}
-            <a class="navbar-brand" href="/"><img src="{% static 'imags/logo.png' %}" class="img-responsive" width="200" alt=""/></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="{% url 'reviews' %}">Reviews</a></li>
-                <li><a href="{% url 'blog' %}">Blog</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    <!-- /.container-fluid -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        {% load staticfiles %}
+        <a class="navbar-brand" href="/"><img src="{% static 'imags/logo.png' %}" class="img-responsive" width="200" alt=""/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'reviews' %}">Reviews</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </div>
 </nav>
 
 <div class="container-fluid">
@@ -66,21 +58,6 @@
         <div class="col-lg-10 col-lg-offset-1">
             {% block breadcrumb %}{% endblock %}
             {% block body %}{% endblock %}
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus enim eum exercitationem
-                inventore iste itaque laborum laudantium magni minima natus neque optio perspiciatis porro, ratione, rem
-                repellat sit suscipit.</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus enim eum exercitationem
-                inventore iste itaque laborum laudantium magni minima natus neque optio perspiciatis porro, ratione, rem
-                repellat sit suscipit.</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus enim eum exercitationem
-                inventore iste itaque laborum laudantium magni minima natus neque optio perspiciatis porro, ratione, rem
-                repellat sit suscipit.</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus enim eum exercitationem
-                inventore iste itaque laborum laudantium magni minima natus neque optio perspiciatis porro, ratione, rem
-                repellat sit suscipit.</p>
 
         </div>
     </div>
@@ -119,14 +96,14 @@
                 </div>
                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                    <p class="footer-menu-title">Contact Us</p>
-                   <p>support-team@mythemeshop.com</p>
+                   <p>support@cheaptlds.com</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="copy-right-note text-center">
-                <p>© DomainHunt.com 2012-2018 Made with <i style="color:#ee5253;" class="icon-heart "></i> using
-                    WordPress.</p>
+                <p>© 2017-2018 Made by <i style="color:#ee5253;" class="icon-heart "></i> <a
+                        href="{% url 'index' %}">Cheap TLDs</a></p>
             </div>
         </div>
     </div>
