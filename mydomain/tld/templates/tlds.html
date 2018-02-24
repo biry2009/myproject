@@ -9,10 +9,12 @@
 
 {% block body %}
 
+<h1 style="text-align: center"> All Top Level Domain Extensions List </h1>
+
 {% for domain in domains %}
 <ul>
     <li>
-        <a href="{% url 'domain'  domain.name %}">{{domain.name}}</a>
+       <h4><a href="{% url 'domain'  domain.name %}">{{domain.name}}</a></h4>
     </li>
 </ul>
 {% endfor %}

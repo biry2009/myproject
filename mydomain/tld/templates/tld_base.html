@@ -40,7 +40,8 @@
     </tbody>
 </table>
 {% else %}
-<h2>There are not registrars for this extension now.</h2>
+<div class="alert alert-warning" role="alert">There are not registrars for this extension now.</div>
+
 {% endif %}
 {% if domain.name %}
 <h2>About {{ domain.name }}:</h2>
